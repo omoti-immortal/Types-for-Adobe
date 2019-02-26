@@ -4194,6 +4194,8 @@ declare class Documents {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Document;
 
 	/**
 	 * The object's container.
@@ -4253,6 +4255,8 @@ declare class Layers {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Layer;
 
 	/**
 	 * The object's container.
@@ -4289,6 +4293,8 @@ declare class GroupItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: GroupItem;
 
 	/**
 	 * The object's container.
@@ -4331,6 +4337,8 @@ declare class PageItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: PageItem;
 
 	/**
 	 * The object's container.
@@ -4357,6 +4365,8 @@ declare class PathItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: PathItem;
 
 	/**
 	 * The object's container.
@@ -4439,6 +4449,8 @@ declare class PathPoints {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: PathPoint;
 
 	/**
 	 * The object's container.
@@ -4475,6 +4487,8 @@ declare class CompoundPathItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: CompoundPathItem;
 
 	/**
 	 * The object's container.
@@ -4511,6 +4525,8 @@ declare class Stories {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Story;
 
 	/**
 	 * The object's container.
@@ -4537,6 +4553,8 @@ declare class TextFrameItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: TextFrameItem;
 
 	/**
 	 * The object's container.
@@ -4600,6 +4618,8 @@ declare class LegacyTextItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: LegacyTextItem;
 
 	/**
 	 * The object's container.
@@ -4631,6 +4651,8 @@ declare class TextRanges {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: TextRange;
 
 	/**
 	 * The object's container.
@@ -4657,6 +4679,8 @@ declare class InsertionPoints {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: InsertionPoint;
 
 	/**
 	 * The object's container.
@@ -4683,6 +4707,8 @@ declare class Characters {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Character;
 
 	/**
 	 * The object's container.
@@ -4726,6 +4752,8 @@ declare class Words {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Word;
 
 	/**
 	 * The object's container.
@@ -4769,6 +4797,8 @@ declare class Lines {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Line;
 
 	/**
 	 * The object's container.
@@ -4795,6 +4825,8 @@ declare class Paragraphs {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Paragraph;
 
 	/**
 	 * The object's container.
@@ -4838,6 +4870,8 @@ declare class CharacterStyles {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: CharacterStyle;
 
 	/**
 	 * The object's container.
@@ -4875,6 +4909,8 @@ declare class ParagraphStyles {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: ParagraphStyle;
 
 	/**
 	 * The object's container.
@@ -4912,6 +4948,8 @@ declare class Spots {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Spot;
 
 	/**
 	 * The object's container.
@@ -4948,6 +4986,8 @@ declare class Swatches {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Swatch;
 
 	/**
 	 * The object's container.
@@ -4990,6 +5030,8 @@ declare class SwatchGroups {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: SwatchGroup;
 
 	/**
 	 * The object's container.
@@ -5031,6 +5073,8 @@ declare class Gradients {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Gradient;
 
 	/**
 	 * The object's container.
@@ -5067,6 +5111,8 @@ declare class GradientStops {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: GradientStop;
 
 	/**
 	 * The object's container.
@@ -5103,6 +5149,8 @@ declare class Patterns {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Pattern;
 
 	/**
 	 * The object's container.
@@ -5139,6 +5187,8 @@ declare class Symbols {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Symbol;
 
 	/**
 	 * The object's container.
@@ -5177,6 +5227,8 @@ declare class SymbolItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: SymbolItem;
 
 	/**
 	 * The object's container.
@@ -5214,6 +5266,8 @@ declare class Brushes {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Brush;
 
 	/**
 	 * The object's container.
@@ -5253,6 +5307,8 @@ declare class ArtStyles {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Style;
 
 	/**
 	 * The object's container.
@@ -5284,6 +5340,8 @@ declare class TextFonts {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: TextFont;
 
 	/**
 	 * The object's container.
@@ -5327,6 +5385,8 @@ declare class Tags {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Tag;
 
 	/**
 	 * The object's container.
@@ -5363,6 +5423,8 @@ declare class RasterItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: RasterItem;
 
 	/**
 	 * The object's container.
@@ -5394,6 +5456,8 @@ declare class PlacedItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: PlacedItem;
 
 	/**
 	 * The object's container.
@@ -5430,6 +5494,8 @@ declare class EmbeddedItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: EmbeddedItem;
 
 	/**
 	 * The object's container.
@@ -5466,6 +5532,8 @@ declare class MeshItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: MeshItem;
 
 	/**
 	 * The object's container.
@@ -5497,6 +5565,8 @@ declare class GraphItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: GraphItem;
 
 	/**
 	 * The object's container.
@@ -5528,6 +5598,8 @@ declare class PluginItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: PluginItem;
 
 	/**
 	 * The object's container.
@@ -5559,6 +5631,8 @@ declare class NonNativeItems {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: NonNativeItem;
 
 	/**
 	 * The object's container.
@@ -5585,6 +5659,8 @@ declare class Views {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: View;
 
 	/**
 	 * The object's container.
@@ -5611,6 +5687,8 @@ declare class Variables {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: Variable;
 
 	/**
 	 * The object's container.
@@ -5647,6 +5725,8 @@ declare class DataSets {
 	 * Number of elements in the collection.
 	 */
 	length: number;
+	
+	[n:number]: DataSet;
 
 	/**
 	 * The object's container.
