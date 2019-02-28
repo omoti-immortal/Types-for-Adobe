@@ -9021,7 +9021,7 @@ declare class Application {
 	 * Executes a menu command using the menu shortcut string.
 	 * @param menuCommandString Menu command shortcut.
 	 */
-	executeMenuCommand(menuCommandString: string): void;
+	executeMenuCommand: menuCommandString;
 
 	/**
 	 * Returns the JSON Data required by CCX Welcome.
@@ -12966,6 +12966,1762 @@ declare enum ViewVectorType {
     TRACINGVIEWVECTORTRACINGRESULT = 3
 }
 
+
+interface menuCommandString {
+	 (/**
+		* New
+		*/
+		command: "new"),
+	(/**
+		* New from Template
+		*/
+		command: "newFromTemplate"),
+	(/**
+		* Open
+			*/
+		command: "open"),
+	(/**
+		* Browse in Bridge
+		*/
+		command: "Adobe Bridge Browse"),
+	(/**
+		* Close
+		*/
+		command: "close"),
+	(/**
+		* Save
+		*/
+		command: "save"),
+		(/**
+			* Save As
+			*/
+			command: "saveas"),
+		(/**
+			* Save a Copy
+			*/
+			command: "saveacopy"),
+		(/**
+			* Save as Template
+			*/
+			command: "saveastemplate"),
+		(/**
+			* Save for Web & Devices
+			*/
+			command: "Adobe AI Save For Web"),
+		(/**
+			* Save Selected Slices
+			*/
+			command: "Adobe AI Save Selected Slices"),
+		(/**
+			* Revert
+			*/
+			command: "revert"),
+		(/**
+			* Place
+			*/
+			command: "AI Place"),
+		(/**
+			* Export
+			*/
+			command: "export"),
+		(/**
+			* Export Selection
+			*/
+			command: "exportSelection"),
+		(/**
+			* Export/Export For Screens
+			*/
+			command: "exportForScreens"),
+		(/**
+			* Scripts>Other Script
+			*/
+			command: "ai_browse_for_script"),
+		(/**
+			* Document Setup
+			*/
+			command: "document"),
+		(/**
+			* Document Color Mode>CMYK Color
+			*/
+			command: "doc-color-cmyk"),
+		(/**
+			* Document Color Mode>RGB Color
+			*/
+			command: "doc-color-rgb"),
+		(/**
+			* File Info
+			*/
+			command: "File Info"),
+		(/**
+			* Print
+			*/
+			command: "Print"),
+		(/**
+			* Exit
+			*/
+			command: "quit"),
+		(/**
+			* Undo
+			*/
+			command: "undo"),
+		(/**
+			* Redo
+			*/
+			command: "redo"),
+		(/**
+			* Cut
+			*/
+			command: "cut"),
+		(/**
+			* Copy
+			*/
+			command: "copy"),
+		(/**
+			* Paste
+			*/
+			command: "paste"),
+		(/**
+			* Paste in Front
+			*/
+			command: "pasteFront"),
+		(/**
+			* Paste in Back
+			*/
+			command: "pasteBack"),
+		(/**
+			* Paste in Place
+			*/
+			command: "pasteInPlace"),
+		(/**
+			* Paste on All Artboards
+			*/
+			command: "pasteInAllArtboard"),
+		(/**
+			* Clear
+			*/
+			command: "clear"),
+		(/**
+			* Find & Replace
+			*/
+			command: "Find and Replace"),
+		(/**
+			* Find Next
+			*/
+			command: "Find Next"),
+		(/**
+			* Check Spelling
+			*/
+			command: "Check Spelling"),
+		(/**
+			* Define Pattern
+			*/
+			command: "Define Pattern Menu Item"),
+		(/**
+			* Edit Colors>Recolor Artwork
+			*/
+			command: "Recolor Art Dialog"),
+		(/**
+			* Edit Colors>Adjust Color Balance
+			*/
+			command: "Adjust3"),
+		(/**
+			* Edit Colors>Blend Front to Back
+			*/
+			command: "Colors3"),
+		(/**
+			* Edit Colors>Blend Horizontally
+			*/
+			command: "Colors4"),
+		(/**
+			* Edit Colors>Blend Vertically
+			*/
+			command: "Colors5"),
+		(/**
+			* Edit Colors>Convert to CMYK
+			*/
+			command: "Colors8"),
+		(/**
+			* Edit Colors>Convert to Grayscale
+			*/
+			command: "Colors7"),
+		(/**
+			* Edit Colors>Convert to RGB
+			*/
+			command: "Colors9"),
+		(/**
+			* Edit Colors>Invert Colors
+			*/
+			command: "Colors6"),
+		(/**
+			* Edit Colors>Overprint Black
+			*/
+			command: "Overprint2"),
+		(/**
+			* Edit Colors>Saturate
+			*/
+			command: "Saturate3"),
+		(/**
+			* Edit Original
+			*/
+			command: "EditOriginal Menu Item"),
+		(/**
+			* Transparency Flattener Presets
+			*/
+			command: "Transparency Presets"),
+		(/**
+			* Tracing Presets
+			*/
+			command: "TracingPresets"),
+		(/**
+			* Print Presets
+			*/
+			command: "Print Presets"),
+		(/**
+			* Adobe PDF Presets
+			*/
+			command: "PDF Presets"),
+		(/**
+			* SWF Presets
+			*/
+			command: "SWFPresets"),
+		(/**
+			* Perspective Grid Presets
+			*/
+			command: "PerspectiveGridPresets"),
+		(/**
+			* Color Settings
+			*/
+			command: "color"),
+		(/**
+			* Assign Profile
+			*/
+			command: "assignprofile"),
+		(/**
+			* Keyboard Shortcuts
+			*/
+			command: "KBSC Menu Item"),
+		(/**
+			* Preferences>General
+			*/
+			command: "preference"),
+		(/**
+			* Preferences>Selection & Anchor Display
+			*/
+			command: "selectPref"),
+		(/**
+			* Preferences>Type
+			*/
+			command: "keyboardPref"),
+		(/**
+			* Preferences>Units
+			*/
+			command: "unitundoPref"),
+		(/**
+			* Preferences>Guides & Grid
+			*/
+			command: "guidegridPref"),
+		(/**
+			* Preferences>Smart Guides
+			*/
+			command: "snapPref"),
+		(/**
+			* Preferences>Slices
+			*/
+			command: "slicePref"),
+		(/**
+			* Preferences>Hyphenation
+			*/
+			command: "hyphenPref"),
+		(/**
+			* Preferences>Plug-ins & Scratch Disks
+			*/
+			command: "pluginPref"),
+		(/**
+			* Preferences>User Interface
+			*/
+			command: "UIPref"),
+		(/**
+			* Preferences>File Handling & Clipboard
+			*/
+			command: "FileClipboardPref"),
+		(/**
+			* Preferences>Appearance of Black
+			*/
+			command: "BlackPref"),
+		(/**
+			* Transform>Transform Again
+			*/
+			command: "transformagain"),
+		(/**
+			* Transform>Move
+			*/
+			command: "transformmove"),
+		(/**
+			* Transform>Rotate
+			*/
+			command: "transformrotate"),
+		(/**
+			* Transform>Reflect
+			*/
+			command: "transformreflect"),
+		(/**
+			* Transform>Scale
+			*/
+			command: "transformscale"),
+		(/**
+			* Transform>Shear
+			*/
+			command: "transformshear"),
+		(/**
+			* Transform Each
+			*/
+			command: "Transform v23"),
+		(/**
+			* Transform>Reset Bounding Box
+			*/
+			command: "AI Reset Bounding Box"),
+		(/**
+			* Arrange>Bring to Front
+			*/
+			command: "sendToFront"),
+		(/**
+			* Arrange>Bring Forward
+			*/
+			command: "sendForward"),
+		(/**
+			* Arrange>Send Backward
+			*/
+			command: "sendBackward"),
+		(/**
+			* Arrange>Send to Back
+			*/
+			command: "sendToBack"),
+		(/**
+			* Arrange>Send to Current Layer
+			*/
+			command: "Selection Hat 2"),
+		(/**
+			* Group
+			*/
+			command: "group"),
+		(/**
+			* Ungroup
+			*/
+			command: "ungroup"),
+		(/**
+			* Lock>Selection
+			*/
+			command: "lock"),
+		(/**
+			* Lock>All Artwork Above
+			*/
+			command: "Selection Hat 5"),
+		(/**
+			* Lock>Other Layers
+			*/
+			command: "Selection Hat 7"),
+		(/**
+			* Unlock All
+			*/
+			command: "unlockAll"),
+		(/**
+			* Hide>Selection
+			*/
+			command: "hide"),
+		(/**
+			* Hide>All Artwork Above
+			*/
+			command: "Selection Hat 4"),
+		(/**
+			* Hide>Other Layers
+			*/
+			command: "Selection Hat 6"),
+		(/**
+			* Show All
+			*/
+			command: "showAll"),
+		(/**
+			* Expand
+			*/
+			command: "Expand3"),
+		(/**
+			* Expand Appearance
+			*/
+			command: "expandStyle"),
+		(/**
+			* Flatten Transparency
+			*/
+			command: "FlattenTransparency1"),
+		(/**
+			* Rasterize
+			*/
+			command: "Rasterize 8 menu item"),
+		(/**
+			* Create Gradient Mesh
+			*/
+			command: "make mesh"),
+		(/**
+			* Create Object Mosaic
+			*/
+			command: "AI Object Mosaic Plug-in4"),
+		(/**
+			* Create Trim Marks
+			*/
+			command: "TrimMark v25"),
+		(/**
+			* Slice>Make
+			*/
+			command: "AISlice Make Slice"),
+		(/**
+			* Slice>Release
+			*/
+			command: "AISlice Release Slice"),
+		(/**
+			* Slice>Create from Guides
+			*/
+			command: "AISlice Create from Guides"),
+		(/**
+			* Slice>Create from Selection
+			*/
+			command: "AISlice Create from Selection"),
+		(/**
+			* Slice>Duplicate Slice
+			*/
+			command: "AISlice Duplicate"),
+		(/**
+			* Slice>Combine Slices
+			*/
+			command: "AISlice Combine"),
+		(/**
+			* Slice>Divide Slices
+			*/
+			command: "AISlice Divide"),
+		(/**
+			* Slice>Delete All
+			*/
+			command: "AISlice Delete All Slices"),
+		(/**
+			* Slice>Slice Options
+			*/
+			command: "AISlice Slice Options"),
+		(/**
+			* Slice>Clip to Artboard
+			*/
+			command: "AISlice Clip to Artboard"),
+		(/**
+			* Path>Join
+			*/
+			command: "join"),
+		(/**
+			* Path>Average
+			*/
+			command: "average"),
+		(/**
+			* Path>Outline Stroke
+			*/
+			command: "OffsetPath v22"),
+		(/**
+			* Path>Offset Path
+			*/
+			command: "OffsetPath v23"),
+		(/**
+			* Path>Simplify
+			*/
+			command: "simplify menu item"),
+		(/**
+			* Path>Add Anchor Points
+			*/
+			command: "Add Anchor Points2"),
+		(/**
+			* Path>Remove Anchor Points
+			*/
+			command: "Remove Anchor Points menu"),
+		(/**
+			* Path>Divide Objects Below
+			*/
+			command: "Knife Tool2"),
+		(/**
+			* Path>Split Into Grid
+			*/
+			command: "Rows and Columns…."),
+		(/**
+			* Path>Clean Up
+			*/
+			command: "cleanup menu item"),
+		(/**
+			* Blend>Make
+			*/
+			command: "Path Blend Make"),
+		(/**
+			* Blend>Release
+			*/
+			command: "Path Blend Release"),
+		(/**
+			* Blend>Expand
+			*/
+			command: "Path Blend Expand"),
+		(/**
+			* Blend>Blend Options
+			*/
+			command: "Path Blend Options"),
+		(/**
+			* Blend>Replace Spine
+			*/
+			command: "Path Blend Replace Spine"),
+		(/**
+			* Blend>Reverse Spine
+			*/
+			command: "Path Blend Reverse Spine"),
+		(/**
+			* Blend>Reverse Front to Back
+			*/
+			command: "Path Blend Reverse Stack"),
+		(/**
+			* Envelope Distort>Make with Warp
+			*/
+			command: "Make Warp"),
+		(/**
+			* Envelope Distort>Make with Mesh
+			*/
+			command: "Create Envelope Grid"),
+		(/**
+			* Envelope Distort>Make with Top Object
+			*/
+			command: "Make Envelope"),
+		(/**
+			* Envelope Distort>Release
+			*/
+			command: "Release Envelope"),
+		(/**
+			* Envelope Distort>Envelope Options
+			*/
+			command: "Envelope Options"),
+		(/**
+			* Envelope Distort>Expand
+			*/
+			command: "Expand Envelope"),
+		(/**
+			* Envelope Distort>Edit Contents
+			*/
+			command: "Edit Envelope Contents"),
+		(/**
+			* Perspective>Attach to Active Plane
+			*/
+			command: "Attach to Active Plane"),
+		(/**
+			* Perspective>Release with Perspective
+			*/
+			command: "Release with Perspective"),
+		(/**
+			* Perspective>Move Plane to Match Object
+			*/
+			command: "Show Object Grid Plane"),
+		(/**
+			* Perspective>Edit Text
+			*/
+			command: "Edit Original Object"),
+		(/**
+			* Live Paint>Make
+			*/
+			command: "Make Planet X"),
+		(/**
+			* Live Paint>Merge
+			*/
+			command: "Marge Planet X"),
+		(/**
+			* Live Paint>Release
+			*/
+			command: "Release Planet X"),
+		(/**
+			* Live Paint>Gap Options
+			*/
+			command: "Planet X Options"),
+		(/**
+			* Live Paint>Expand
+			*/
+			command: "Expand Planet X"),
+		(/**
+			* Text Wrap>Make
+			*/
+			command: "Make Text Wrap"),
+		(/**
+			* Text Wrap>Release
+			*/
+			command: "Release Text Wrap"),
+		(/**
+			* Text Wrap>Text Wrap Options
+			*/
+			command: "Text Wrap Options…"),
+		(/**
+			* Clipping Mask>Make
+			*/
+			command: "makeMask"),
+		(/**
+			* Clipping Mask>Release
+			*/
+			command: "releaseMask"),
+		(/**
+			* Clipping Mask>Edit Contents
+			*/
+			command: "editMask"),
+		(/**
+			* Compound Path>Make
+			*/
+			command: "compoundPath"),
+		(/**
+			* Compound Path>Release
+			*/
+			command: "noCompoundPath"),
+		(/**
+			* Artboards>Convert to Artboards
+			*/
+			command: "setCropMarks"),
+		(/**
+			* Artboards>Rearrange
+			*/
+			command: "ReArrange Artboards"),
+		(/**
+			* Artboards>Fit to Artwork Bounds
+			*/
+			command: "Fit Artboard to artwork bounds"),
+		(/**
+			* Artboards>Fit to Selected Art
+			*/
+			command: "Fit Artboard to selected Art"),
+		(/**
+			* Graph>Type
+			*/
+			command: "setGraphStyle"),
+		(/**
+			* Graph>Data
+			*/
+			command: "editGraphData"),
+		(/**
+			* Graph>Design
+			*/
+			command: "graphDesigns"),
+		(/**
+			* Graph>Column
+			*/
+			command: "setBarDesign"),
+		(/**
+			* Graph>Marker
+			*/
+			command: "setIconDesign"),
+		(/**
+			* Glyphs
+			*/
+			command: "alternate glyph palette plugin"),
+		(/**
+			* Area Type Options
+			*/
+			command: "area-type-options"),
+		(/**
+			* Type on a Path>Rainbow
+			*/
+			command: "Rainbow"),
+		(/**
+			* Type on a Path>3D Ribbon
+			*/
+			command: "3D ribbon"),
+		(/**
+			* Type on a Path>Skew
+			*/
+			command: "Skew"),
+		(/**
+			* Type on a Path>Stair Step
+			*/
+			command: "Stair Step"),
+		(/**
+			* Type on a Path>Gravity
+			*/
+			command: "Gravity"),
+		(/**
+			* Type on a Path>Type on a path Options
+			*/
+			command: "typeOnPathOptions"),
+		(/**
+			* Type on a Path>Update Legacy Type on a Path
+			*/
+			command: "updateLegacyTOP"),
+		(/**
+			* Threaded Text>Create
+			*/
+			command: "threadTextCreate"),
+		(/**
+			* Threaded Text>Release Selection
+			*/
+			command: "releaseThreadedTextSelection"),
+		(/**
+			* Threaded Text>Remove Threading
+			*/
+			command: "removeThreading"),
+		(/**
+			* Composite Fonts
+			*/
+			command: "Adobe internal composite font plugin"),
+		(/**
+			* Kinsoku Shori Settings
+			*/
+			command: "Adobe Kinsoku Settings"),
+		(/**
+			* Mojikumi Settings
+			*/
+			command: "Adobe MojiKumi Settings"),
+		(/**
+			* Fit Headline
+			*/
+			command: "fitHeadline"),
+		(/**
+			* Create Outlines
+			*/
+			command: "outline"),
+		(/**
+			* Find Font
+			*/
+			command: "Adobe Illustrator Find Font Menu Item"),
+		(/**
+			* Change Case>UPPERCASE
+			*/
+			command: "UpperCase Change Case Item"),
+		(/**
+			* Change Case>lowercase
+			*/
+			command: "LowerCase Change Case Item"),
+		(/**
+			* Change Case>Title Case
+			*/
+			command: "Title Case Change Case Item"),
+		(/**
+			* Change Case>Sentence case
+			*/
+			command: "Sentence case Change Case Item"),
+		(/**
+			* Smart Punctuation
+			*/
+			command: "Adobe Illustrator Smart Punctuation Menu Item"),
+		(/**
+			* Optical Margin Alignment
+			*/
+			command: "Adobe Optical Alignment Item"),
+		(/**
+			* Show Hidden Characters
+			*/
+			command: "showHiddenChar"),
+		(/**
+			* Type Orientation>Horizontal
+			*/
+			command: "type-horizontal"),
+		(/**
+			* Type Orientation>Vertical
+			*/
+			command: "type-vertical"),
+		(/**
+			* All
+			*/
+			command: "selectall"),
+		(/**
+			* All on Active Artboard
+			*/
+			command: "selectallinartboard"),
+		(/**
+			* Deselect
+			*/
+			command: "deselectall"),
+		(/**
+			* Reselect
+			*/
+			command: "Find Reselect menu item"),
+		(/**
+			* Inverse
+			*/
+			command: "Inverse menu item"),
+		(/**
+			* Next Object Above
+			*/
+			command: "Selection Hat 8"),
+		(/**
+			* Next Object Below
+			*/
+			command: "Selection Hat 9"),
+		(/**
+			* Same>Appearance
+			*/
+			command: "Find Appearance menu item"),
+		(/**
+			* Same>Appearance Attribute
+			*/
+			command: "Find Appearance Attributes menu item"),
+		(/**
+			* Same>Blending Mode
+			*/
+			command: "Find Blending Mode menu item"),
+		(/**
+			* Same>Fill & Stroke
+			*/
+			command: "Find Fill & Stroke menu item"),
+		(/**
+			* Same>Fill Color
+			*/
+			command: "Find Fill Color menu item"),
+		(/**
+			* Same>Opacity
+			*/
+			command: "Find Opacity menu item"),
+		(/**
+			* Same>Stroke Color
+			*/
+			command: "Find Stroke Color menu item"),
+		(/**
+			* Same>Stroke Weight
+			*/
+			command: "Find Stroke Weight menu item"),
+		(/**
+			* Same>Graphic Style
+			*/
+			command: "Find Style menu item"),
+		(/**
+			* Same>Symbol Instance
+			*/
+			command: "Find Symbol Instance menu item"),
+		(/**
+			* Same>Link Block Series
+			*/
+			command: "Find Link Block Series menu item"),
+		(/**
+			* Object>All on Same Layers
+			*/
+			command: "Selection Hat 3"),
+		(/**
+			* Object>Direction Handles
+			*/
+			command: "Selection Hat 1"),
+		(/**
+			* Object>Not Aligned to Pixel Grid
+			*/
+			command: "Selection Hat 12"),
+		(/**
+			* Object>Bristle Brush Strokes
+			*/
+			command: "Bristle Brush Strokes menu item"),
+		(/**
+			* Object>Brush Strokes
+			*/
+			command: "Brush Strokes menu item"),
+		(/**
+			* Object>Clipping Masks
+			*/
+			command: "Clipping Masks menu item"),
+		(/**
+			* Object>Stray Points
+			*/
+			command: "Stray Points menu item"),
+		(/**
+			* Object>Text Objects
+			*/
+			command: "Text Objects menu item"),
+		(/**
+			* Object>Flash Dynamic Text
+			*/
+			command: "Dynamic Text"),
+		(/**
+			* Object>Flash Input Text
+			*/
+			command: "Input Text"),
+		(/**
+			* Save Selection
+			*/
+			command: "Selection Hat 10"),
+		(/**
+			* Edit Selection
+			*/
+			command: "Selection Hat 11"),
+		(/**
+			* Apply Last Effect
+			*/
+			command: "Adobe Apply Last Effect"),
+		(/**
+			* Last Effect
+			*/
+			command: "Adobe Last Effect"),
+		(/**
+			* Document Raster Effects Settings
+			*/
+			command: "Live Rasterize Effect Setting"),
+		(/**
+			* 3D>Extrude & Bevel
+			*/
+			command: "Live 3DExtrude"),
+		(/**
+			* 3D>Revolve
+			*/
+			command: "Live 3DRevolve"),
+		(/**
+			* 3D>Rotate
+			*/
+			command: "Live 3DRotate"),
+		(/**
+			* Convert to Shape>Rectangle
+			*/
+			command: "Live Rectangle"),
+		(/**
+			* Convert to Shape>Rounded Rectangle
+			*/
+			command: "Live Rounded Rectangle"),
+		(/**
+			* Convert to Shape>Ellipse
+			*/
+			command: "Live Ellipse"),
+		(/**
+			* Crop Marks
+			*/
+			command: "Live Trim Marks"),
+		(/**
+			* Distort & Transform>Free Distort
+			*/
+			command: "Live Free Distort"),
+		(/**
+			* Distort & Transform>Pucker & Bloat
+			*/
+			command: "Live Pucker & Bloat"),
+		(/**
+			* Distort & Transform>Roughen
+			*/
+			command: "Live Roughen"),
+		(/**
+			* Distort & Transform>Transform
+			*/
+			command: "Live Transform"),
+		(/**
+			* Distort & Transform>Tweak
+			*/
+			command: "Live Scribble and Tweak"),
+		(/**
+			* Distort & Transform>Twist
+			*/
+			command: "Live Twist"),
+		(/**
+			* Distort & Transform>Zig Zag
+			*/
+			command: "Live Zig Zag"),
+		(/**
+			* Path>Offset Path
+			*/
+			command: "Live Offset Path"),
+		(/**
+			* Path>Outline Object
+			*/
+			command: "Live Outline Object"),
+		(/**
+			* Path>Outline Stroke
+			*/
+			command: "Live Outline Stroke"),
+		(/**
+			* Pathfinder>Add
+			*/
+			command: "Live Pathfinder Add"),
+		(/**
+			* Pathfinder>Intersect
+			*/
+			command: "Live Pathfinder Intersect"),
+		(/**
+			* Pathfinder>Exclude
+			*/
+			command: "Live Pathfinder Exclude"),
+		(/**
+			* Pathfinder>Subtract
+			*/
+			command: "Live Pathfinder Subtract"),
+		(/**
+			* Pathfinder>Minus Back
+			*/
+			command: "Live Pathfinder Minus Back"),
+		(/**
+			* Pathfinder>Divide
+			*/
+			command: "Live Pathfinder Divide"),
+		(/**
+			* Pathfinder>Trim
+			*/
+			command: "Live Pathfinder Trim"),
+		(/**
+			* Pathfinder>Merge
+			*/
+			command: "Live Pathfinder Merge"),
+		(/**
+			* Pathfinder>Crop
+			*/
+			command: "Live Pathfinder Crop"),
+		(/**
+			* Pathfinder>Outline
+			*/
+			command: "Live Pathfinder Outline"),
+		(/**
+			* Pathfinder>Hard Mix
+			*/
+			command: "Live Pathfinder Hard Mix"),
+		(/**
+			* Pathfinder>Soft Mix
+			*/
+			command: "Live Pathfinder Soft Mix"),
+		(/**
+			* Pathfinder>Trap
+			*/
+			command: "Live Pathfinder Trap"),
+		(/**
+			* Rasterize
+			*/
+			command: "Live Rasterize"),
+		(/**
+			* Stylize>Drop Shadow
+			*/
+			command: "Live Adobe Drop Shadow"),
+		(/**
+			* Stylize>Feather
+			*/
+			command: "Live Feather"),
+		(/**
+			* Stylize>Inner Glow
+			*/
+			command: "Live Inner Glow"),
+		(/**
+			* Stylize>outer Glow
+			*/
+			command: "Live Outer Glow"),
+		(/**
+			* Stylize>Round Corners
+			*/
+			command: "Live Adobe Round Corners"),
+		(/**
+			* Stylize>Scribble
+			*/
+			command: "Live Scribble Fill"),
+		(/**
+			* SVG Filters>Apply SVG Filter
+			*/
+			command: "Live SVG Filters"),
+		(/**
+			* SVG Filters>Import SVG Filter
+			*/
+			command: "SVG Filter Import"),
+		(/**
+			* Warp>Arc
+			*/
+			command: "Live Deform Arc"),
+		(/**
+			* Warp>Arc Lower
+			*/
+			command: "Live Deform Arc Lower"),
+		(/**
+			* Warp>Arc Upper
+			*/
+			command: "Live Deform Arc Upper"),
+		(/**
+			* Warp>Arch
+			*/
+			command: "Live Deform Arch"),
+		(/**
+			* Warp>Bulge
+			*/
+			command: "Live Deform Bulge"),
+		(/**
+			* Warp>Shell Lower
+			*/
+			command: "Live Deform Shell Lower"),
+		(/**
+			* Warp>Shell Upper
+			*/
+			command: "Live Deform Shell Upper"),
+		(/**
+			* Warp>Flag
+			*/
+			command: "Live Deform Flag"),
+		(/**
+			* Warp>Wave
+			*/
+			command: "Live Deform Wave"),
+		(/**
+			* Warp>Fish
+			*/
+			command: "Live Deform Fish"),
+		(/**
+			* Warp>Rise
+			*/
+			command: "Live Deform Rise"),
+		(/**
+			* Warp>Fisheye
+			*/
+			command: "Live Deform Fisheye"),
+		(/**
+			* Warp>Inflate
+			*/
+			command: "Live Deform Inflate"),
+		(/**
+			* Warp>Squeeze
+			*/
+			command: "Live Deform Squeeze"),
+		(/**
+			* Warp>Twist
+			*/
+			command: "Live Deform Twist"),
+		(/**
+			* Effect Gallery
+			*/
+			command: "Live PSAdapter_plugin_GEfc"),
+		(/**
+			* Artistic>Colored Pencil
+			*/
+			command: "Live PSAdapter_plugin_ClrP"),
+		(/**
+			* Artistic>Cutout
+			*/
+			command: "Live PSAdapter_plugin_Ct"),
+		(/**
+			* Artistic>Dry Brush
+			*/
+			command: "Live PSAdapter_plugin_DryB"),
+		(/**
+			* Artistic>Film Grain
+			*/
+			command: "Live PSAdapter_plugin_FlmG"),
+		(/**
+			* Artistic>Fresco
+			*/
+			command: "Live PSAdapter_plugin_Frsc"),
+		(/**
+			* Artistic>Neon Glow
+			*/
+			command: "Live PSAdapter_plugin_NGlw"),
+		(/**
+			* Artistic>Paint Daubs
+			*/
+			command: "Live PSAdapter_plugin_PntD"),
+		(/**
+			* Artistic>Palette Knife
+			*/
+			command: "Live PSAdapter_plugin_PltK"),
+		(/**
+			* Artistic>Plastic Wrap
+			*/
+			command: "Live PSAdapter_plugin_PlsW"),
+		(/**
+			* Artistic>Poster Edges
+			*/
+			command: "Live PSAdapter_plugin_PstE"),
+		(/**
+			* Artistic>Rough Pastels
+			*/
+			command: "Live PSAdapter_plugin_RghP"),
+		(/**
+			* Artistic>Smudge Stick
+			*/
+			command: "Live PSAdapter_plugin_SmdS"),
+		(/**
+			* Artistic>Sponge
+			*/
+			command: "Live PSAdapter_plugin_Spng"),
+		(/**
+			* Artistic>Underpainting
+			*/
+			command: "Live PSAdapter_plugin_Undr"),
+		(/**
+			* Artistic>Watercolor
+			*/
+			command: "Live PSAdapter_plugin_Wtrc"),
+		(/**
+			* Blur>Gaussian Blur
+			*/
+			command: "Live PSAdapter_plugin_GblR"),
+		(/**
+			* Blur>Radial Blur
+			*/
+			command: "Live PSAdapter_plugin_RdlB"),
+		(/**
+			* Blur>Smart Blur
+			*/
+			command: "Live PSAdapter_plugin_SmrB"),
+		(/**
+			* Brush Strokes>Accented Edges
+			*/
+			command: "Live PSAdapter_plugin_AccE"),
+		(/**
+			* Brush Strokes>Angled Strokes
+			*/
+			command: "Live PSAdapter_plugin_AngS"),
+		(/**
+			* Brush Strokes>Crosshatch
+			*/
+			command: "Live PSAdapter_plugin_Crsh"),
+		(/**
+			* Brush Strokes>Dark Strokes
+			*/
+			command: "Live PSAdapter_plugin_DrkS"),
+		(/**
+			* Brush Strokes>Ink Outlines
+			*/
+			command: "Live PSAdapter_plugin_InkO"),
+		(/**
+			* Brush Strokes>Spatter
+			*/
+			command: "Live PSAdapter_plugin_Spt"),
+		(/**
+			* Brush Strokes>Sprayed Strokes
+			*/
+			command: "Live PSAdapter_plugin_SprS"),
+		(/**
+			* Brush Strokes>Sumi-e
+			*/
+			command: "Live PSAdapter_plugin_Smie"),
+		(/**
+			* Distort>Diffuse Glow
+			*/
+			command: "Live PSAdapter_plugin_DfsG"),
+		(/**
+			* Distort>Glass
+			*/
+			command: "Live PSAdapter_plugin_Gls"),
+		(/**
+			* Distort>Ocean Ripple
+			*/
+			command: "Live PSAdapter_plugin_OcnR"),
+		(/**
+			* Pixelate>Color Halftone
+			*/
+			command: "Live PSAdapter_plugin_ClrH"),
+		(/**
+			* Pixelate>Crystallize
+			*/
+			command: "Live PSAdapter_plugin_Crst"),
+		(/**
+			* Pixelate>Mezzotint
+			*/
+			command: "Live PSAdapter_plugin_Mztn"),
+		(/**
+			* Pixelate>Pointillize
+			*/
+			command: "Live PSAdapter_plugin_Pntl"),
+		(/**
+			* Sharpen>Unsharp Mask
+			*/
+			command: "Live PSAdapter_plugin_USMk"),
+		(/**
+			* Sketch>Bas Relief
+			*/
+			command: "Live PSAdapter_plugin_BsRl"),
+		(/**
+			* Sketch>Chalk & Charcoal
+			*/
+			command: "Live PSAdapter_plugin_ChlC"),
+		(/**
+			* Sketch>Charcoal
+			*/
+			command: "Live PSAdapter_plugin_Chrc"),
+		(/**
+			* Sketch>Chrome
+			*/
+			command: "Live PSAdapter_plugin_Chrm"),
+		(/**
+			* Sketch>Cont￩ Crayon
+			*/
+			command: "Live PSAdapter_plugin_CntC"),
+		(/**
+			* Sketch>Graphic Pen
+			*/
+			command: "Live PSAdapter_plugin_GraP"),
+		(/**
+			* Sketch>Halftone Pattern
+			*/
+			command: "Live PSAdapter_plugin_HlfS"),
+		(/**
+			* Sketch>Note Paper
+			*/
+			command: "Live PSAdapter_plugin_NtPr"),
+		(/**
+			* Sketch>Photocopy
+			*/
+			command: "Live PSAdapter_plugin_Phtc"),
+		(/**
+			* Sketch>Plaster
+			*/
+			command: "Live PSAdapter_plugin_Plst"),
+		(/**
+			* Sketch>Reticulation
+			*/
+			command: "Live PSAdapter_plugin_Rtcl"),
+		(/**
+			* Sketch>Stamp
+			*/
+			command: "Live PSAdapter_plugin_Stmp"),
+		(/**
+			* Sketch>Torn Edges
+			*/
+			command: "Live PSAdapter_plugin_TrnE"),
+		(/**
+			* Sketch>Water Paper
+			*/
+			command: "Live PSAdapter_plugin_WtrP"),
+		(/**
+			* Stylize>Glowing Edges
+			*/
+			command: "Live PSAdapter_plugin_GlwE"),
+		(/**
+			* Texture>Craquelure
+			*/
+			command: "Live PSAdapter_plugin_Crql"),
+		(/**
+			* Texture>Grain
+			*/
+			command: "Live PSAdapter_plugin_Grn"),
+		(/**
+			* Texture>Mosaic Tiles
+			*/
+			command: "Live PSAdapter_plugin_MscT"),
+		(/**
+			* Texture>Patchwork
+			*/
+			command: "Live PSAdapter_plugin_Ptch"),
+		(/**
+			* Texture>Stained Glass
+			*/
+			command: "Live PSAdapter_plugin_StnG"),
+		(/**
+			* Texture>Texturizer
+			*/
+			command: "Live PSAdapter_plugin_Txtz"),
+		(/**
+			* Video>De-Interlace
+			*/
+			command: "Live PSAdapter_plugin_Dntr"),
+		(/**
+			* Video>NTSC Colors
+			*/
+			command: "Live PSAdapter_plugin_NTSC"),
+		(/**
+			* Preview
+			*/
+			command: "preview"),
+		(/**
+			* Overprint Preview
+			*/
+			command: "ink"),
+		(/**
+			* Pixel Preview
+			*/
+			command: "raster"),
+		(/**
+			* Proof Setup>Document CMYK>
+			*/
+			command: "proof-document"),
+		(/**
+			* Proof Setup>Legacy Macintosh RGB (Gamma 1.8)
+			*/
+			command: "proof-mac-rgb"),
+		(/**
+			* Proof Setup>Internet Standard RGB (sRGB)
+			*/
+			command: "proof-win-rgb"),
+		(/**
+			* Proof Setup>Monitor RGB
+			*/
+			command: "proof-monitor-rgb"),
+		(/**
+			* Proof Setup>Color blindness – Protanopia-type
+			*/
+			command: "proof-colorblindp"),
+		(/**
+			* Proof Setup>Color blindness – Deuteranopia-type
+			*/
+			command: "proof-colorblindd"),
+		(/**
+			* Proof Setup>Customize
+			*/
+			command: "proof-custom"),
+		(/**
+			* Proof Colors
+			*/
+			command: "proofColors"),
+		(/**
+			* Zoom In
+			*/
+			command: "zoomin"),
+		(/**
+			* Zoom Out
+			*/
+			command: "zoomout"),
+		(/**
+			* Fit Artboard in Window
+			*/
+			command: "fitin"),
+		(/**
+			* Fit All in Window
+			*/
+			command: "fitall"),
+		(/**
+			* Actual Size
+			*/
+			command: "actualsize"),
+		(/**
+			* Hide Edges
+			*/
+			command: "edge"),
+		(/**
+			* Hide Artboards
+			*/
+			command: "artboard"),
+		(/**
+			* Hide Print Tiling
+			*/
+			command: "pagetiling"),
+		(/**
+			* Show Slices
+			*/
+			command: "AISlice Feedback Menu"),
+		(/**
+			* Lock Slices
+			*/
+			command: "AISlice Lock Menu"),
+		(/**
+			* Show Template
+			*/
+			command: "showtemplate"),
+		(/**
+			* Rulers>Show Rulers
+			*/
+			command: "ruler"),
+		(/**
+			* Rulers>Show Video Rulers
+			*/
+			command: "videoruler"),
+		(/**
+			* Rulers>Change to Global Rulers
+			*/
+			command: "rulerCoordinateSystem"),
+		(/**
+			* Hide Bounding Box
+			*/
+			command: "AI Bounding Box Toggle"),
+		(/**
+			* Show Transparency Grid
+			*/
+			command: "TransparencyGrid Menu Item"),
+		(/**
+			* Show Text Threads
+			*/
+			command: "textthreads"),
+		(/**
+			* Hide Gradient Annotator
+			*/
+			command: "Gradient Feedback"),
+		(/**
+			* Show Live Paint Gaps
+			*/
+			command: "Show Gaps Planet X"),
+		(/**
+			* Guides>Hide Guides
+			*/
+			command: "showguide"),
+		(/**
+			* Guides>Lock Guides
+			*/
+			command: "lockguide"),
+		(/**
+			* Guides>Make Guides
+			*/
+			command: "makeguide"),
+		(/**
+			* Guides>Release Guides
+			*/
+			command: "releaseguide"),
+		(/**
+			* Guides>Clear Guides
+			*/
+			command: "clearguide"),
+		(/**
+			* Smart Guides
+			*/
+			command: "Snapomatic on-off menu item"),
+		(/**
+			* Perspective Grid>Show Grid
+			*/
+			command: "Show Perspective Grid"),
+		(/**
+			* Perspective Grid>Show Rulers
+			*/
+			command: "Show Ruler"),
+		(/**
+			* Perspective Grid>Snap to Grid
+			*/
+			command: "Snap to Grid"),
+		(/**
+			* Perspective Grid>Lock Grid
+			*/
+			command: "Lock Perspective Grid"),
+		(/**
+			* Perspective Grid>Lock Station Point
+			*/
+			command: "Lock Station Point"),
+		(/**
+			* Perspective Grid>Define Grid
+			*/
+			command: "Define Perspective Grid"),
+		(/**
+			* Perspective Grid>Save Grid as Preset
+			*/
+			command: "Save Perspective Grid as Preset"),
+		(/**
+			* Show Grid
+			*/
+			command: "showgrid"),
+		(/**
+			* Snap to Grid
+			*/
+			command: "snapgrid"),
+		(/**
+			* Snap to Point
+			*/
+			command: "snappoint"),
+		(/**
+			* New View
+			*/
+			command: "newview"),
+		(/**
+			* Edit Views
+			*/
+			command: "editview"),
+		(/**
+			* New Window
+			*/
+			command: "newwindow"),
+		(/**
+			* Arrange>Cascade
+			*/
+			command: "cascade"),
+		(/**
+			* Arrange>Tile
+			*/
+			command: "tile"),
+		(/**
+			* Arrange>Float in Window
+			*/
+			command: "floatInWindow"),
+		(/**
+			* Arrange>Float All in Windows
+			*/
+			command: "floatAllInWindows"),
+		(/**
+			* Arrange>Consolidate All Windows
+			*/
+			command: "consolidateAllWindows"),
+		(/**
+			* Workspace>Save Workspace
+			*/
+			command: "Adobe Save Workspace"),
+		(/**
+			* Workspace>New Workspace
+			*/
+			command: "Adobe New Workspace"),
+		(/**
+			* Workspace>Manage Workspaces
+			*/
+			command: "Adobe Manage Workspace"),
+		(/**
+			* CSS Menu
+			*/
+			command: "CSS Menu Item"),
+		(/**
+			* Tools
+			*/
+			command: "AdobeBuiltInToolbox1"),
+		(/**
+			* Actions
+			*/
+			command: "Adobe Action Palette"),
+		(/**
+			* Align
+			*/
+			command: "AdobeAlignObjects2"),
+		(/**
+			* Appearance
+			*/
+			command: "Style Palette"),
+		(/**
+			* Artboards
+			*/
+			command: "Adobe Artboard Palette"),
+		(/**
+			* Attributes
+			*/
+			command: "internal palettes posing as plug-in menus-attributes"),
+		(/**
+			* Brushes
+			*/
+			command: "Adobe BrushManager Menu Item"),
+		(/**
+			* Color
+			*/
+			command: "Adobe Color Palette"),
+		(/**
+			* Color Guide
+			*/
+			command: "Adobe Harmony Palette"),
+		(/**
+			* Kuler Panel
+			*/
+			command: "Adobe Illustrator Kuler Panel"),
+		(/**
+			* Document Info
+			*/
+			command: "DocInfo1"),
+		(/**
+			* Flattener Preview
+			*/
+			command: "Adobe Flattening Preview"),
+		(/**
+			* Gradient
+			*/
+			command: "Adobe Gradient Palette"),
+		(/**
+			* Graphic Styles
+			*/
+			command: "Adobe Style Palette"),
+		(/**
+			* Info
+			*/
+			command: "internal palettes posing as plug-in menus-info"),
+		(/**
+			* Layers
+			*/
+			command: "AdobeLayerPalette1"),
+		(/**
+			* Links
+			*/
+			command: "Adobe LinkPalette Menu Item"),
+		(/**
+			* Magic Wand
+			*/
+			command: "AI Magic Wand"),
+		(/**
+			* Navigator
+			*/
+			command: "AdobeNavigator"),
+		(/**
+			* Pathfinder
+			*/
+			command: "Adobe PathfinderUI"),
+		(/**
+			* Separations Preview
+			*/
+			command: "Adobe Separation Preview Panel"),
+		(/**
+			* Stroke
+			*/
+			command: "Adobe Stroke Palette"),
+		(/**
+			* SVG Interactivity
+			*/
+			command: "Adobe SVG Interactivity Palette"),
+		(/**
+			* Swatches
+			*/
+			command: "Adobe Swatches Menu Item"),
+		(/**
+			* Symbols
+			*/
+			command: "Adobe Symbol Palette"),
+		(/**
+			* Transform
+			*/
+			command: "AdobeTransformObjects1"),
+		(/**
+			* Transparency
+			*/
+			command: "Adobe Transparency Palette Menu Item"),
+		(/**
+			* Variables
+			*/
+			command: "Adobe Variables Palette Menu Item"),
+		(/**
+			* Character
+			*/
+			command: "internal palettes posing as plug-in menus-character"),
+		(/**
+			* Character Styles
+			*/
+			command: "Character Styles"),
+		(/**
+			* Glyphs
+			*/
+			command: "alternate glyph palette plugin 2"),
+		(/**
+			* OpenType
+			*/
+			command: "internal palettes posing as plug-in menus-opentype"),
+		(/**
+			* Paragraph
+			*/
+			command: "internal palettes posing as plug-in menus-paragraph"),
+		(/**
+			* Paragraph Styles
+			*/
+			command: "Adobe Paragraph Styles Palette"),
+		(/**
+			* Tabs
+			*/
+			command: "internal palettes posing as plug-in menus-tab"),
+		(/**
+			* Other Library
+			*/
+			command: "Adobe Art Style Plugin Other libraries menu item"),
+		(/**
+			* Other Library
+			*/
+			command: "Adobe Symbol Palette Plugin Other libraries menu item"),
+		(/**
+			* New Symbol
+			*/
+			command: "Adobe New Symbol Shortcut"),
+		(/**
+			* Show Color Panel (Secondary)
+			*/
+			command: "Adobe Color Palette Secondary"),
+		(/**
+			* Actions Batch
+			*/
+			command: "Adobe Actions Batch"),
+		(/**
+			* Add New Fill
+			*/
+			command: "Adobe New Fill Shortcut"),
+		(/**
+			* Add New Stroke
+			*/
+			command: "Adobe New Stroke Shortcut"),
+		(/**
+			* New Graphic Style
+			*/
+			command: "Adobe New Style Shortcut"),
+		(/**
+			* New Layer
+			*/
+			command: "AdobeLayerPalette2"),
+		(/**
+			* New Layer with Dialog
+			*/
+			command: "AdobeLayerPalette3"),
+		(/**
+			* Update Link
+			*/
+			command: "Adobe Update Link Shortcut"),
+		(/**
+			* Navigator Options
+			*/
+			command: "AdobeNavigator2"),
+		(/**
+			* New Swatch
+			*/
+			command: "Adobe New Swatch Shortcut Menu"),
+
+}
 
 //declare var PageItem: PathItems|TextFrameItem|PlacedItem|PluginItem|CompoundPathItem; 
 
