@@ -12990,7 +12990,7 @@ declare module aiMenu {
 		export : {
 			export : "export",
 			exportForScreens : "exportForScreens",
-			eaveForWebAndDevices : "Adobe AI Save For Web"
+			saveForWebAndDevices : "Adobe AI Save For Web"
 			},
 		exportSelection : "exportSelection",
 		scripts : {
