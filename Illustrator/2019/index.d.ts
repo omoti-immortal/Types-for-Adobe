@@ -13527,7 +13527,7 @@ declare module aiMenu {
 		};
 	let panels : {
 		newSymbol : "Adobe New Symbol Shortcut",
-		showColorPanel (Secondary) : "Adobe Color Palette Secondary",
+		showColorPanel_Secondary : "Adobe Color Palette Secondary",
 		actionsBatch : "Adobe Actions Batch",
 		addNewFill : "Adobe New Fill Shortcut",
 		addNewStroke : "Adobe New Stroke Shortcut",
