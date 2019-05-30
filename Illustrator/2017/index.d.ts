@@ -8537,7 +8537,7 @@ declare class Document {
 	/**
 	 * The bounds of the illustration excluding stroke width.
 	 */
-	geometricBounds: Rect;
+	geometricBounds: [Number, Number, Number, Number];
 
 	/**
 	 * The gradients available in this document.
@@ -8777,7 +8777,7 @@ declare class Document {
 	/**
 	 * The visible bounds of the illustration including stroke width.
 	 */
-	visibleBounds: Rect;
+	visibleBounds: [Number, Number, Number, Number];
 
 	/**
 	 * 
@@ -9803,7 +9803,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork including stroke width and controls.
 	 */
-	controlBounds: Rect;
+	controlBounds: [Number, Number, Number, Number];
 
 	/**
 	 * Can the art item be modified.
@@ -9813,7 +9813,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork excluding stroke width.
 	 */
-	geometricBounds: Rect;
+	geometricBounds: [Number, Number, Number, Number];
 
 	/**
 	 * The height of the art item.
@@ -9908,7 +9908,7 @@ declare class PageItem {
 	/**
 	 * The visible bounds of the artwork including stroke width.
 	 */
-	visibleBounds: Rect;
+	visibleBounds: [Number, Number, Number, Number];
 
 	/**
 	 * The width of the art item.
