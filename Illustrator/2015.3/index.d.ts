@@ -6526,7 +6526,12 @@ declare class ExportOptionsTIFF {
 /**
  * The parent class for all color values used in Illustrator. See the specific color classes for more information.
  */
-declare class Color {}
+declare class Color {
+  /**
+   * The name of the color.
+  */
+	typename: string
+}
 
 /**
  * An Lab color specification.
@@ -11947,7 +11952,7 @@ declare class Artboard {
   /**
    * Size and position of artboard.
    */
-  artboardRect: Rect
+  artboardRect: number[]
 
   /**
    * The name of the artboard.

@@ -5542,7 +5542,7 @@ declare class PDFSaveOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Draw color bars.
@@ -6602,6 +6602,10 @@ declare class ExportOptionsTIFF {
  * The parent class for all color values used in Illustrator. See the specific color classes for more information.
  */
 declare class Color {
+  /**
+   * The name of the color.
+  */
+	typename: string;
 }
 
 /**
@@ -7031,7 +7035,7 @@ declare class PaperInfo {
 	/**
 	 * The imageable area.
 	 */
-	imageableArea: Rect;
+	imageableArea: number[];
 
 	/**
 	 * The paper's width (in points)
@@ -7463,7 +7467,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Whether to enable color bars printing.
@@ -7473,7 +7477,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The page marks offset rect.
 	 */
-	marksOffsetRect: Rect;
+	marksOffsetRect: number[];
 
 	/**
 	 * Whether to enable page info marks printing.
@@ -8447,7 +8451,7 @@ declare class Document {
 	/**
 	 * 
 	 */
-	cropBox: Rect;
+	cropBox: number[];
 
 	/**
 	 * 
@@ -9186,7 +9190,7 @@ declare class View {
 	/**
 	 * The bounding rectangle of this view.
 	 */
-	bounds: Rect;
+	bounds: number[];
 
 	/**
 	 * The center point of this view.
@@ -10263,7 +10267,7 @@ declare class RasterItem extends PageItem {
 	/**
 	 * Dimensions of raster art object regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The number of image channels.
@@ -10340,7 +10344,7 @@ declare class PlacedItem extends PageItem {
 	/**
 	 * Dimensions of placed art object, regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The content variable bound to this placed art object.
@@ -12003,7 +12007,7 @@ declare class Artboard {
 	/**
 	 * Size and position of artboard.
 	 */
-	artboardRect: Rect;
+	artboardRect: number[];
 
 	/**
 	 * The name of the artboard.
@@ -12087,55 +12091,3 @@ declare class Point {
 	y: number;
 
 }
-
-/**
- * Describes a rectangle. This class is also a four-element collection.
- */
-declare class Rectangle {
-	/**
-	 * The bottom coordinate.
-	 */
-	bottom: number;
-
-	/**
-	 * The height.
-	 */
-	height: number;
-
-	/**
-	 * The left coordinate.
-	 */
-	left: number;
-
-	/**
-	 * The array length.
-	 */
-	length: number;
-
-	/**
-	 * The right coordinate.
-	 */
-	right: number;
-
-	/**
-	 * The top coordinate.
-	 */
-	top: number;
-
-	/**
-	 * The width.
-	 */
-	width: number;
-
-	/**
-	 * The left coordinate.
-	 */
-	x: number;
-
-	/**
-	 * The top coordinate.
-	 */
-	y: number;
-
-}
-
