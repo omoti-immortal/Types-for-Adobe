@@ -4390,7 +4390,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork including stroke width and controls.
 	 */
-	controlBounds: [Number, Number, Number, Number];
+	controlBounds: number[];
 
 	/**
 	 * Can the art item be modified.
@@ -4400,7 +4400,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork excluding stroke width.
 	 */
-	geometricBounds: [Number, Number, Number, Number];
+	geometricBounds: number[];
 
 	/**
 	 * The height of the art item.
@@ -4495,7 +4495,7 @@ declare class PageItem {
 	/**
 	 * The visible bounds of the artwork including stroke width.
 	 */
-	visibleBounds: [Number, Number, Number, Number];
+	visibleBounds: number[];
 
 	/**
 	 * The width of the art item.
@@ -5060,7 +5060,7 @@ declare class Lines {
 	 */
 	length: number;
 
-	[n: number]: TextRange;
+	[n: number]: pathItem;
 
 	/**
 	 * The object's container.
@@ -6213,7 +6213,7 @@ declare class PDFSaveOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Draw color bars.
@@ -7893,7 +7893,7 @@ declare class PaperInfo {
 	/**
 	 * The imageable area.
 	 */
-	imageableArea: Rect;
+	imageableArea: number[];
 
 	/**
 	 * The paper's width (in points)
@@ -8054,7 +8054,7 @@ declare class DocumentPreset {
 	/**
 	 * Document bleed offset rect.
 	 */
-	documentBleedOffset: Rect;
+	documentBleedOffset: number[];
 
 	/**
 	 * The height for the new document.
@@ -8335,7 +8335,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Whether to enable color bars printing.
@@ -8345,7 +8345,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The page marks offset rect.
 	 */
-	marksOffsetRect: Rect;
+	marksOffsetRect: number[];
 
 	/**
 	 * Whether to enable page info marks printing.
@@ -9332,7 +9332,7 @@ declare class Document {
 	/**
 	 * 
 	 */
-	cropBox: Rect;
+	cropBox: number[];
 
 	/**
 	 * 
@@ -9422,7 +9422,7 @@ declare class Document {
 	/**
 	 * The bounds of the illustration excluding stroke width.
 	 */
-	geometricBounds: [Number, Number, Number, Number];
+	geometricBounds: number[];
 
 	/**
 	 * The gradients available in this document.
@@ -9664,7 +9664,7 @@ declare class Document {
 	/**
 	 * The visible bounds of the illustration including stroke width.
 	 */
-	visibleBounds: [Number, Number, Number, Number];
+	visibleBounds: number[];
 
 	/**
 	 * 
@@ -10083,7 +10083,7 @@ declare class View {
 	/**
 	 * The bounding rectangle of this view.
 	 */
-	bounds: Rect;
+	bounds: number[];
 
 	/**
 	 * The center point of this view.
@@ -10907,7 +10907,7 @@ declare class RasterItem extends PageItem {
 	/**
 	 * Dimensions of raster art object regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The number of image channels.
@@ -10984,7 +10984,7 @@ declare class PlacedItem extends PageItem {
 	/**
 	 * Dimensions of placed art object, regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The content variable bound to this placed art object.
@@ -12783,7 +12783,7 @@ declare class Artboard {
 	/**
 	 * Size and position of artboard.
 	 */
-	artboardRect: Rect;
+	artboardRect: number[];
 
 	/**
 	 * The name of the artboard.
@@ -12834,7 +12834,6 @@ declare class Artboard {
 	 * Deletes all elements.
 	 */
 	removeAll(): void;
-
 }
 
 

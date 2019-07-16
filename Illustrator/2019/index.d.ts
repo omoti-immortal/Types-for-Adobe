@@ -4128,6 +4128,8 @@ declare class Artboards {
 	 */
 	length: number;
 
+	[n:number]: Artboard;
+
 	/**
 	 * The object's container.
 	 */
@@ -4142,7 +4144,7 @@ declare class Artboards {
 	 * Add artboard object.
 	 * @param artboardRect Size and position of artboard.
 	 */
-	add(artboardRect: Rect): Artboard;
+	add(artboardRect: number[]): Artboard;
 
 	/**
 	 * Retrieves the index position of the active artboard in the document's list.
@@ -4165,7 +4167,7 @@ declare class Artboards {
 	 * @param artboardRect Size and position of artboard.
 	 * @param index Index position where artboard should be inserted.
 	 */
-	insert(artboardRect: Rect, index: number): void;
+	insert(artboardRect: number[], index: number): void;
 
 	/**
 	 * Delete artboard object.
@@ -4708,7 +4710,7 @@ declare class Characters {
 	 */
 	length: number;
 	
-	[n:number]: Character;
+	[n:number]: TextRange;
 
 	/**
 	 * The object's container.
@@ -4753,7 +4755,7 @@ declare class Words {
 	 */
 	length: number;
 	
-	[n:number]: Word;
+	[n:number]: TextRange;
 
 	/**
 	 * The object's container.
@@ -4798,7 +4800,7 @@ declare class Lines {
 	 */
 	length: number;
 	
-	[n:number]: Line;
+	[n:number]: PathItem;
 
 	/**
 	 * The object's container.
@@ -4826,7 +4828,7 @@ declare class Paragraphs {
 	 */
 	length: number;
 	
-	[n:number]: Paragraph;
+	[n:number]: TextRange;
 
 	/**
 	 * The object's container.
@@ -5308,7 +5310,7 @@ declare class ArtStyles {
 	 */
 	length: number;
 	
-	[n:number]: Style;
+	[n:number]: ArtStyle;
 
 	/**
 	 * The object's container.
@@ -5495,7 +5497,7 @@ declare class EmbeddedItems {
 	 */
 	length: number;
 	
-	[n:number]: EmbeddedItem;
+	[n:number]: PageItem;
 
 	/**
 	 * The object's container.
@@ -5950,7 +5952,7 @@ declare class PDFSaveOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Draw color bars.
@@ -7630,7 +7632,7 @@ declare class PaperInfo {
 	/**
 	 * The imageable area.
 	 */
-	imageableArea: Rect;
+	imageableArea: number[];
 
 	/**
 	 * The paper's width (in points)
@@ -7791,7 +7793,7 @@ declare class DocumentPreset {
 	/**
 	 * Document bleed offset rect.
 	 */
-	documentBleedOffset: Rect;
+	documentBleedOffset: number[];
 
 	/**
 	 * The height for the new document.
@@ -8072,7 +8074,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The bleed offset rect.
 	 */
-	bleedOffsetRect: Rect;
+	bleedOffsetRect: number[];
 
 	/**
 	 * Whether to enable color bars printing.
@@ -8082,7 +8084,7 @@ declare class PrintPageMarksOptions {
 	/**
 	 * The page marks offset rect.
 	 */
-	marksOffsetRect: Rect;
+	marksOffsetRect: number[];
 
 	/**
 	 * Whether to enable page info marks printing.
@@ -9068,7 +9070,7 @@ declare class Document {
 	/**
 	 * 
 	 */
-	cropBox: Rect;
+	cropBox: number[];
 
 	/**
 	 * 
@@ -9158,7 +9160,7 @@ declare class Document {
 	/**
 	 * The bounds of the illustration excluding stroke width.
 	 */
-	geometricBounds: [Number, Number, Number, Number];
+	geometricBounds: number[];
 
 	/**
 	 * The gradients available in this document.
@@ -9398,7 +9400,7 @@ declare class Document {
 	/**
 	 * The visible bounds of the illustration including stroke width.
 	 */
-	visibleBounds: [Number, Number, Number, Number];
+	visibleBounds: number[];
 
 	/**
 	 * 
@@ -9818,7 +9820,7 @@ declare class View {
 	/**
 	 * The bounding rectangle of this view.
 	 */
-	bounds: Rect;
+	bounds: number[];
 
 	/**
 	 * The center point of this view.
@@ -10446,7 +10448,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork including stroke width and controls.
 	 */
-	controlBounds: [Number, Number, Number, Number];
+	controlBounds: number[];
 
 	/**
 	 * Can the art item be modified.
@@ -10456,7 +10458,7 @@ declare class PageItem {
 	/**
 	 * The bounds of the artwork excluding stroke width.
 	 */
-	geometricBounds: [Number, Number, Number, Number];
+	geometricBounds: number[];
 
 	/**
 	 * The height of the art item.
@@ -10551,7 +10553,7 @@ declare class PageItem {
 	/**
 	 * The visible bounds of the artwork including stroke width.
 	 */
-	visibleBounds: [Number, Number, Number, Number];
+	visibleBounds: number[];
 
 	/**
 	 * The width of the art item.
@@ -10906,7 +10908,7 @@ declare class RasterItem extends PageItem {
 	/**
 	 * Dimensions of raster art object regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The number of image channels.
@@ -10983,7 +10985,7 @@ declare class PlacedItem extends PageItem {
 	/**
 	 * Dimensions of placed art object, regardless of transformations.
 	 */
-	boundingBox: Rect;
+	boundingBox: number[];
 
 	/**
 	 * The content variable bound to this placed art object.
@@ -12770,6 +12772,7 @@ declare class Asset {
 
 }
 
+
 /**
  * An artboard object.
  */
@@ -12777,7 +12780,7 @@ declare class Artboard {
 	/**
 	 * Size and position of artboard.
 	 */
-	artboardRect: Rect;
+	artboardRect: number[];
 
 	/**
 	 * The name of the artboard.
@@ -12828,8 +12831,8 @@ declare class Artboard {
 	 * Deletes all elements.
 	 */
 	removeAll(): void;
-
 }
+
 
 /**
  * Describes a point. This class is also a two-element collection.
