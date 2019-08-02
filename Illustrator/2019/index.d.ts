@@ -9806,11 +9806,6 @@ declare class Layer {
 	remove(): void;
 
 	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
-	/**
 	 * Arranges the layer relative to other layers.
 	 * @param zOrderCmd How to arrange the layer.
 	 */
@@ -9888,11 +9883,6 @@ declare class Gradient {
 	 */
 	remove(): void;
 
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
@@ -9933,11 +9923,6 @@ declare class GradientStop {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -10080,11 +10065,6 @@ declare class Spot {
 	 */
 	remove(): void;
 
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
@@ -10121,11 +10101,6 @@ declare class Variable {
 	 */
 	remove(): void;
 
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
@@ -10156,11 +10131,6 @@ declare class DataSet {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 	/**
 	 * Re-apply the dynamic data of the active dataset to the artboard.
@@ -10197,11 +10167,6 @@ declare class Swatch {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -10246,11 +10211,6 @@ declare class SwatchGroup {
 	 */
 	remove(): void;
 
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
@@ -10276,11 +10236,6 @@ declare class Pattern {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -10312,11 +10267,6 @@ declare class Symbol {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -10614,11 +10564,6 @@ declare class PageItem {
 	remove(): void;
 
 	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
-	/**
 	 * Scale art object(s)
 	 * @param scaleX Horizontal scaling factor expressed as a percentage (100 = 100%)
 	 * @param scaleY Vertical scaling factor expressed as a percentage (100 = 100%)
@@ -10720,11 +10665,6 @@ declare class Tag {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -10893,11 +10833,6 @@ declare class PathPoint {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -11742,11 +11677,6 @@ declare class TextRange {
 	remove(): void;
 
 	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
-	/**
 	 * Select the text range.
 	 * @param addToDocument Whether to add the text range to the document text selection.
 	 */
@@ -11846,11 +11776,6 @@ declare class CharacterStyle {
 	 */
 	remove(): void;
 
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
@@ -11903,11 +11828,6 @@ declare class ParagraphStyle {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 
 }
 
@@ -12831,11 +12751,6 @@ declare class Artboard {
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
 }
 
 
