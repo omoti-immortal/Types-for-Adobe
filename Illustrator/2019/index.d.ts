@@ -12785,57 +12785,6 @@ declare class Point {
 
 }
 
-/**
- * Describes a rectangle. This class is also a four-element collection.
- */
-declare class Rectangle {
-	/**
-	 * The bottom coordinate.
-	 */
-	bottom: number;
-
-	/**
-	 * The height.
-	 */
-	height: number;
-
-	/**
-	 * The left coordinate.
-	 */
-	left: number;
-
-	/**
-	 * The array length.
-	 */
-	length: number;
-
-	/**
-	 * The right coordinate.
-	 */
-	right: number;
-
-	/**
-	 * The top coordinate.
-	 */
-	top: number;
-
-	/**
-	 * The width.
-	 */
-	width: number;
-
-	/**
-	 * The left coordinate.
-	 */
-	x: number;
-
-	/**
-	 * The top coordinate.
-	 */
-	y: number;
-
-}
-
 declare const Rect: {
 	new(value1: number, value2: number, value3: number, value4: number): [number, number, number, number],
 }
