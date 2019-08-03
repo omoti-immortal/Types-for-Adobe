@@ -13232,9 +13232,6 @@ declare module aiMenu {
 			tornEdges : "Live PSAdapter_plugin_TrnE",
 			waterPaper : "Live PSAdapter_plugin_WtrP"
 			},
-		stylize : {
-			glowingEdges : "Live PSAdapter_plugin_GlwE"
-			},
 		texture : {
 			craquelure : "Live PSAdapter_plugin_Crql",
 			grain : "Live PSAdapter_plugin_Grn",
