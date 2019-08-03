@@ -5302,33 +5302,40 @@ declare class Brushes {
 }
 
 /**
- * A collection of art styles.
+ * A collection of GraphicStyle objects in a document.
  */
-declare class ArtStyles {
+declare class GraphicStyles {
 	/**
-	 * Number of elements in the collection.
+	 * The number of graphic styles in the document.
 	 */
-	length: number;
-	
-	[n:number]: ArtStyle;
+	readonly length: number;
+	[n: number]: GraphicStyle;
 
 	/**
-	 * The object's container.
+	 * The document that contains this graphic styles collection.
 	 */
-	parent: object;
+	readonly parent: Document;
 
 	/**
-	 * The class name of the object.
+	 * The class name of the referenced object.
 	 */
-	typename: string;
+	readonly typename: string;
 
 	/**
-	 * Get the first element in the collection with the provided name.
+	 * Gets the first element in the collection with the specified name.
 	 */
-	getByName(name: string): ArtStyle;
+	getByName(name: string): GraphicStyle;
+
 
 	/**
-	 * Deletes all elements.
+	 * Gets an element from the collection.
+	 */
+	index(itemKey: string): GraphicStyle;
+	index(itemKey: number): GraphicStyle;
+
+
+	/**
+	 * Removes all elements in the referenced collection.
 	 */
 	removeAll(): void;
 
@@ -9180,7 +9187,7 @@ declare class Document {
 	/**
 	 * The graphic styles defined in this document.
 	 */
-	graphicStyles: ArtStyles;
+	graphicStyles: GraphicStyles;
 
 	/**
 	 * The group items in this document.
@@ -10298,46 +10305,40 @@ declare class Brush {
 }
 
 /**
- * An art style.
+ * A graphic style. Each graphic style defines a set of appearance attributes that you can apply
+ * non-destructively to page items. Graphic styles are contained in documents. Scripts cannot create new
+ * graphic styles.
  */
-declare class ArtStyle {
+declare class GraphicStyle {
 	/**
-	 * The art style's name.
+	 * The graphic style name.
 	 */
 	name: string;
 
 	/**
-	 * The object's container.
+	 * The document that contains this graphic style.
 	 */
-	parent: object;
+	readonly parent: Document;
 
 	/**
-	 * The class name of the object.
+	 * The class name of the referenced object.
 	 */
-	typename: string;
+	readonly typename: string;
 
 	/**
-	 * Apply a brush or art style to object(s)
-	 * @param artItem The page item(s) to apply to.
+	 * Applies this art style to a specified art item.
 	 */
-	applyTo(artItem: any): void;
+	applyTo(artItem: PageItem): void;
 
 	/**
-	 * Merge an art style to object(s) current style(s)
-	 * @param artItem The page item(s) to merge to.
+	 * Merges this art style into the current styles of a specified art item.
 	 */
-	mergeTo(artItem: any): void;
+	mergeTo(artItem: PageItem): void;
 
 	/**
 	 * Deletes this object.
 	 */
 	remove(): void;
-
-	/**
-	 * Deletes all elements.
-	 */
-	removeAll(): void;
-
 }
 
 /**
