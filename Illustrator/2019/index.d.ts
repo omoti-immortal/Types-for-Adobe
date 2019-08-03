@@ -8479,7 +8479,7 @@ declare class Application {
 	/**
 	 * The selection visible to the user.
 	 */
-	selection: any;
+	selection: any[] | null;
 
 	/**
 	 * The list of presets available for creating a new document.
@@ -9322,7 +9322,7 @@ declare class Document {
 	/**
 	 * The selection within the document.
 	 */
-	selection: any;
+	selection: any[] | null;
 
 	/**
 	 * 
