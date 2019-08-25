@@ -12754,14 +12754,6 @@ declare class Artboard {
 	remove(): void;
 }
 
-
-/**
- * Describes a point. This class is also a two-element collection.
- */
-declare class Point {
-	new(value1: number, value2: number): [number, number];
-}
-
 declare const Rect: {
 	new(value1: number, value2: number, value3: number, value4: number): [number, number, number, number];
 }
