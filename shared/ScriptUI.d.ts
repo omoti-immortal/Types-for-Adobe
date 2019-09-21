@@ -10,76 +10,77 @@ type _Justify = "left" | "center" | "right";
 type _Truncate = "middle" | "end" | "none";
 type _Container = Window | Group | Panel | Tab | TabbedPanel;
 
-
+/**
+ * A global class containing central information about ScriptUI. Not instantiable.
+ */
 declare namespace ScriptUI {
   /**
    * Collects the enumerated values that can be used in the alignment and alignChildren properties of controls and containers.
    * Predefined alignment values are: TOP, BOTTOM, LEFT, RIGHT, FILL, CENTER
    */
   enum Alignment {
-      TOP = 1,
-      BOTTOM = 2,
-      LEFT = 3,
-      RIGHT = 4,
-      FILL = 5,
-      CENTER = 6,
-    }
-}
-
-/**
- * A global class containing central information about ScriptUI. Not instantiable.
- */
-declare class ScriptUI {
+    TOP = 1,
+    BOTTOM = 2,
+    LEFT = 3,
+    RIGHT = 4,
+    FILL = 5,
+    CENTER = 6,
+  }
 
   /**
    * Collects the enumerated values that can be used as the style argument to the ScriptUI.newFont() method.
    * Predefined styles are REGULAR, BOLD, ITALIC, BOLDITALIC.
    */
-  static readonly FontStyle: object
+  enum FontStyle {
+    REGULAR = 0,
+    BOLD = 1,
+    ITALIC = 2,
+    BOLDITALIC = 3,
+  }
 
   /**
    * The font constants defined by the host application.
    */
-  static readonly applicationFonts: object
+  const applicationFonts: object
 
   /**
    * An object whose properties are the names of compatability modes supported by the host application.
    * The presence of ScriptUI.compatability.su1PanelCoordinates means that the application allows backward compatibility with the coordinate system of Panel elements in ScriptUI version 1.
    */
-  static readonly compatibility: object
+  const compatibility: object
 
   /**
    * A string containing the internal version number of the ScriptUI module.
    */
-  static readonly coreVersion: string
+  const coreVersion: string
 
   /**
    * An object whose properties define attributes of the environment in which ScriptUI operates.
    */
-  static readonly environment: Environment
+  const environment: Environment
 
   /**
    * An object whose properties and methods provide access to objects used in the ScriptUI event system.
    * It contains one function, createEvent(), which allows you to create event objects in order to simulate user-interaction event
    */
-  static readonly events: Events
+  const events: Events
 
   /**
    * A string containing the name of the UI component framework with which this version of ScriptUI is compatible.
    */
-  static readonly frameworkName: string
+  const frameworkName: string
 
   /**
    * A string containing the version number of the ScriptUI component framework
    */
-  static readonly version: any
+  const version: any
 
   /**
    * Finds and returns the resource for a given text string from the host application's resource data.
    * If no string resource matches the given text, the text itself is returned.
    * @param text The text to match.
    */
-  static getResourceText(text: string): string
+  function getResourceText(text: string): string
 
   /**
    * Creates a new font object for use in text controls and titles.
@@ -87,7 +88,7 @@ declare class ScriptUI {
    * @param style The font style; can be string, or one of the values of ScriptUI.FontStyle.
    * @param size The font size in points.
    */
-  static newFont(name: string, style: string, size: number): ScriptUIFont
+  function newFont(name: string, style: string, size: number): ScriptUIFont
 
   /**
    * Loads a new image from resources or disk files into an image object.
@@ -97,12 +98,13 @@ declare class ScriptUI {
    * @param pressed The resource name, or the file-system path to the image used for the pressed state.
    * @param rollover The resource name, or the file-system path to the image used for the rollover state.
    */
-  static newImage(
+  function newImage(
     normal: string,
-    disabled?: string,
-    pressed?: string,
-    rollover?: string,
+    disabled ?: string,
+    pressed ?: string,
+    rollover ?: string,
   ): ScriptUIImage
+
 }
 
 /**
@@ -184,7 +186,7 @@ declare class Window extends _Control {
    * The layout manager for this container.
    * The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout() function. Default is an instance of the LayoutManager class that is automatically created when the container element is created.
    */
-  layout: LayoutManager
+  layout: AutoLayoutManager
 
   /**
    * The number of pixels between the edges of a container and the outermost child elements.
@@ -375,7 +377,7 @@ declare class Window extends _Control {
  * Controls the automatic layout behavior for a window or container.
  * The subclass AutoLayoutManager implements the default automatic layout behavior.
  */
-declare class LayoutManager {
+declare interface AutoLayoutManager {
   /**
    * Invokes the automatic layout behavior for the managed container.
    * Adjusts sizes and positions of the child elements of this window or container according to the placement and alignment property values in the parent and children.
@@ -403,7 +405,7 @@ interface _TitleLayout {
  * A drawing pen that defines a color and line width used to stroke paths.
  * Create with ScriptUIGraphics.newPen(). Use as a value of  foregroundColor properties, and pass as an argument to drawString() and strokePath() methods.
  */
-declare class ScriptUIPen {
+declare interface ScriptUIPen {
   /**
    * The pen color.
    * The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0..1.0]. An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.
@@ -432,7 +434,7 @@ declare class ScriptUIPen {
  * A painting brush that encapsulates a color or pattern used to fill paths.
  * Create with ScriptUIGraphics.newBrush(). Use as a value of  backgroundColor properties, and pass as an argument to the fillPath() method.
  */
-declare class ScriptUIBrush {
+declare interface ScriptUIBrush {
   /**
    * The brush color.
    * The paint color to use when the type is SOLID_COLOR. An array in the form [R, B, G, A] specifying the red, green, blue values of the color and the opacity (alpha channel) value as numbers in the range [0.0..1.0]. An opacity of 0 is fully transparent, and an opacity of 1 is fully opaque.
@@ -456,24 +458,31 @@ declare class ScriptUIBrush {
  * A helper object that encapsulates a drawing path for a figure to be drawn into a window or control.
  * Create with the newPath(), moveto(), lineto(), rectPath(), and ellipsePath() methods.Used as value of currentPath, where it is acted upon by methods such as closePath().Pass as optional argument to fillPath() and strokePath(), which otherwise act upon the current path.
  */
-declare class ScriptUIPath {}
+declare interface ScriptUIPath { }
 
 /**
  * An object used to draw custom graphics, found in the graphics property of window, container, and control objects.
  * Allows a script to customize aspects of the element’s appearance, such as the color and font. Use an onDraw callback function to set these properties or call the functions.All measurements are in pixels.
  */
-declare class ScriptUIGraphics {
+declare interface ScriptUIGraphics {
+
   /**
    * Contains the enumerated constants for the type argument of newBrush().
    * Type constants are: SOLID_COLOR, THEME_COLOR.
    */
-  static readonly BrushType: object
+  readonly BrushType: {
+    SOLID_COLOR: 0,
+    THEME_COLOR: 1,
+  }
 
   /**
    * Contains the enumerated constants for the type argument of newPen().
    * Type constants are: SOLID_COLOR, THEME_COLOR.
    */
-  static readonly PenType: object
+  readonly PenType: {
+    SOLID_COLOR: 0,
+    THEME_COLOR: 1,
+  }
 
   /**
    * The background color for containers; for non-containers, the parent background color.
@@ -640,7 +649,7 @@ declare class ScriptUIGraphics {
  * Describes an input state at the time of the triggering  ScriptUIGraphics.onDraw() event.
  * Contains properties that report whether the current control has the input focus, and the particular mouse button and keypress state. Passed in as argument to ScriptUIGraphics.onDraw().
  */
-declare class DrawState {
+declare interface DrawState {
   /**
    * True if the Alt key is being pressed (in Windows only).
    */
@@ -706,7 +715,7 @@ declare class DrawState {
  * Encapsulates the qualities of a font used to draw text into a control.
  * Create with the newFont() method.Used as a value of font. Passed as an argument to drawString() and measureString().
  */
-declare class ScriptUIFont {
+declare interface ScriptUIFont {
   /**
    * The font family name.
    */
@@ -737,7 +746,7 @@ declare class ScriptUIFont {
  * Encapsulates a set of images that can be drawn into a control.
  * Different images can reflect the current state, such as a dimmed version for a disabled control. Create with the newImage() method. Passed as an argument to drawImage().
  */
-declare class ScriptUIImage {
+declare interface ScriptUIImage {
   /**
    * The image format. One of: resource, JPEG, GIF, TIFF, PNG, or PICT (Macintosh).
    */
@@ -762,7 +771,7 @@ declare class ScriptUIImage {
 /**
  * A text label that the user cannot change.
  */
-declare class StaticText extends _Control {
+declare interface StaticText extends _Control {
   /**
    * Always false. This element cannot have input focus.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -823,7 +832,7 @@ declare class StaticText extends _Control {
  * A pushbutton element containing a mouse-sensitive text string.
  * Calls the onClick() callback if the control is clicked or if its notify() method is called.
  */
-declare class Button extends _Control {
+declare interface Button extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -901,7 +910,7 @@ declare class Button extends _Control {
  * Amouse-sensitive pushbutton that displays an image instead of text.
  * Calls the onClick() callback if the control is clicked or if its notify() method is called.
  */
-declare class IconButton extends _Control {
+declare interface IconButton extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -970,7 +979,7 @@ declare class IconButton extends _Control {
  * An editable text field that the user can select and change.
  * Calls the onChange() callback if the text is changed and the user types Enter or the control loses focus, or if its notify() method is called. Calls the onChanging() callback when any change is made to the text. The textselection property contains currently selected text.
  */
-declare class EditText extends _Control {
+declare interface EditText extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1061,7 +1070,7 @@ declare class EditText extends _Control {
  * Displays a list of choices, represented by ListItem objects.
  * When you create the object, you specify whether it allows the user to select only one or multiple items. If a list contains more items than can be displayed in the available area, a scrollbar may appear that allows the user to scroll through all the list items.You can specify the items on creation of the list object, or afterward using the list object’s add() method. You can remove items programmatically with the list object’s remove() and removeAll() methods. You can create a list box with multiple columns; in this case, each row is a selectable choice, and each ListItem represents one row.
  */
-declare class ListBox extends _Control {
+declare interface ListBox extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1183,7 +1192,7 @@ declare class ListBox extends _Control {
  * Displays a single visible item. When you click the control, a list drops down or pops up, and allows you to select one of the other items in the list.
  * Drop-down lists can have nonselectable separator items for visually separating groups of related items, as in a menu. You can specify the items on creation of the list object, or afterward using the list object’s add() method. You can remove items programmatically with the list object’s remove() and removeAll() methods. Calls the onChange() callback if the item selection is changed or if its notify() method is called.
  */
-declare class DropDownList extends _Control {
+declare interface DropDownList extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1290,7 +1299,7 @@ declare class DropDownList extends _Control {
  * An item in a list box, drop-down list, or tree view.
  * You can specify initial items in the creation parameters when creating the parent list. Create new items using the add() method (ListBox.add(), DropDownList.add(), TreeView.add()) in the parent list with control type="item", or, for DropDownList controls, type="separator".For a multi-column list box, the object represents one selectable row. Its text and image values specify the label in the first column, and the subitems property specifies the labels in the additional columns.
  */
-declare class ListItem {
+declare interface ListItem {
   /**
    * The checked state of an item in a list.
    * When true, the item is marked with the platform-appropriate checkmark. When false, no checkmark is drawn, but space is reserved for it in the left margin, so that the item lines up with other checkable items. When undefined, no space is reserved for a checkmark.
@@ -1350,7 +1359,7 @@ declare class ListItem {
  * A dual-state control showing a box that has a checkmark when the value is true, and is empty when the value is false.
  * Calls the onClick() callback if the control is clicked or if its notify() method is called.
  */
-declare class Checkbox extends _Control {
+declare interface Checkbox extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1435,7 +1444,7 @@ declare class Checkbox extends _Control {
  * The scrollbar control has a horizontal orientation if the width is greater than the height at creation time, or vertical if its height is greater than its width.
  * Calls the onChange() callback after the position of the indicator is changed or if its notify() method is called. Calls the onChanging() callback repeatedly while the user is moving the indicator. Scrollbars are often created with an associated EditText field to display the current value of the scrollbar, and to allow setting the scrollbar's position to a specific value.
  */
-declare class Scrollbar extends _Control {
+declare interface Scrollbar extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1532,7 +1541,7 @@ declare class Scrollbar extends _Control {
  * A dual-state control, grouped with other radiobuttons, of which only one can be in the selected state.
  * Shows the selected state when value=true, empty when value=false. Calls the onClick() callback if the control is clicked or if its notify() method is called.
  */
-declare class RadioButton extends _Control {
+declare interface RadioButton extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1615,7 +1624,7 @@ declare class RadioButton extends _Control {
  * A slider bar that indicates a numeric value with a moveable position indicator.
  * All slider controls have a horizontal orientation. Calls the onChange() callback after the position of the indicator is changed or if its notify() method is called. Calls the onChanging() callback repeatedly while the user is moving the indicator. The value property contains the current position of the indicator within the range of minvalue to maxvalue.
  */
-declare class Slider extends _Control {
+declare interface Slider extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1701,7 +1710,7 @@ declare class Slider extends _Control {
  * A horizontal bar with an indicator that shows the progress of an operation.
  * All progressbar controls have a horizontal orientation. The value property contains the current position of the progress indicator; the default is 0. There is a minvalue property, but it is always 0; attempts to set it to a different value are silently ignored.
  */
-declare class Progressbar extends _Control {
+declare interface Progressbar extends _Control {
   /**
    * An array of child elements.
    */
@@ -1739,7 +1748,7 @@ declare class Progressbar extends _Control {
  * A hierarchical list whose items can contain child items.
  * The ListItem children of this control (in the items array) can be of type node, which means that they can contain child items. An item with child items can expanded, so that the child items are displayed, or collapsed, so that the child items are hidden Individual items can be selected at any level of the tree.
  */
-declare class TreeView extends _Control {
+declare interface TreeView extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1856,7 +1865,7 @@ declare class TreeView extends _Control {
  * A control that contains a Flash Player, which can load and play Flash movies stored in SWF files.
  * The ScriptUI FlashPlayer element runs the Flash application within an Adobe application. The Flash application runs ActionScript, a different implementation of JavaScript from the ExtendScript version of JavaScript that Adobe applications run. A control object of this type contains functions that allow your script to load SWF files, control movie playback, and communicate with the ActionScript environment.
  */
-declare class FlashPlayer extends _Control {
+declare interface FlashPlayer extends _Control {
   /**
    * True if this element is active.
    * An active control is the one with keyboard focus—that is, the one that accepts keystrokes, or in the case of a Button, is selected when the user types Return or Enter in Windows, or the space bar in Mac OS.
@@ -1909,7 +1918,7 @@ declare class FlashPlayer extends _Control {
  * A container for other controls within a window.
  * A group can specify layout options for its child elements. Hiding a group hides all its children. Making it visible makes visible those children that are not individually hidden.
  */
-declare class Group extends _Control {
+declare interface Group extends _Control {
   /**
    * Tells the layout manager how unlike-sized children of this container should be aligned within a column or row.
    * Order of creation determines which children are at the top of a column or the left of a row; the earlier a child is created, the closer it is to the top or left of its column or row. If defined, alignment for a child element overrides the alignChildren setting for the parent container. See alignment property for values.
@@ -1930,7 +1939,7 @@ declare class Group extends _Control {
    * The layout manager for this container.
    * The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout() function. Default is an instance of the LayoutManager class that is automatically created when the container element is created.
    */
-  layout: LayoutManager
+  layout: AutoLayoutManager
 
   /**
    * The number of pixels between the edges of a container and the outermost child elements.
@@ -1978,7 +1987,7 @@ declare class Group extends _Control {
  * A container for other types of controls, with an optional frame.
  * A panel can specify layout options for its child elements. Hiding a panel hides all its children. Making it visible makes visible those children that are not individually hidden.
  */
-declare class Panel extends _Control {
+declare interface Panel extends _Control {
   /**
    * Specifies how to align the child elements.
    */
@@ -2009,7 +2018,7 @@ declare class Panel extends _Control {
    * The layout manager for this container.
    * The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout() function. Default is an instance of the LayoutManager class that is automatically created when the container element is created.
    */
-  layout: LayoutManager
+  layout: AutoLayoutManager
 
   /**
    * The number of pixels between the edges of a container and the outermost child elements.
@@ -2058,7 +2067,7 @@ declare class Panel extends _Control {
   remove(what: any): void
 }
 
-declare class Tab extends _Control {
+declare interface Tab extends _Control {
   /**
    * Tells the layout manager how unlike-sized children of this container should be aligned within a column or row.
    * Order of creation determines which children are at the top of a column or the left of a row; the earlier a child is created, the closer it is to the top or left of its column or row. If defined, alignment for a child element overrides the alignChildren setting for the parent container. See alignment property for values.
@@ -2079,7 +2088,7 @@ declare class Tab extends _Control {
    * The layout manager for this container.
    * The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout() function. Default is an instance of the LayoutManager class that is automatically created when the container element is created.
    */
-  layout: LayoutManager
+  layout: AutoLayoutManager
 
   /**
    * The number of pixels between the edges of a container and the outermost child elements.
@@ -2125,7 +2134,7 @@ declare class Tab extends _Control {
   remove(what: any): void
 }
 
-declare class TabbedPanel extends _Control {
+declare interface TabbedPanel extends _Control {
   /**
    * Tells the layout manager how unlike-sized children of this container should be aligned within a column or row.
    * Order of creation determines which children are at the top of a column or the left of a row; the earlier a child is created, the closer it is to the top or left of its column or row. If defined, alignment for a child element overrides the alignChildren setting for the parent container. See alignment property for values.
@@ -2146,7 +2155,7 @@ declare class TabbedPanel extends _Control {
    * The layout manager for this container.
    * The first time a container object is made visible, ScriptUI invokes this layout manager by calling its layout() function. Default is an instance of the LayoutManager class that is automatically created when the container element is created.
    */
-  layout: LayoutManager
+  layout: AutoLayoutManager
 
   /**
    * The number of pixels between the edges of a container and the outermost child elements.
@@ -2187,7 +2196,7 @@ declare class TabbedPanel extends _Control {
    * An event-handler callback function, called when the content of the element has been changed
    */
   onChange(): void
-  
+
   /**
    * An event-handler callback function, called when the group is about to be drawn.
    * Allows the script to modify or control the appearance, using the control’s associated ScriptUIGraphics object. Handler takes one argument, a DrawState object.
@@ -2207,7 +2216,7 @@ declare class TabbedPanel extends _Control {
  * Specifies the origin point of an element as horizontal and vertical pixel offsets from the origin of the element's coordinate space.
  * A Point object is created when you set an element’s location property. You can set the property using a JavaScript object with properties named x and y, or an array with 2 values in the order [x, y].
  */
-declare class Point {
+interface Point {
   /**
    * The left coordinate.
    */
@@ -2242,7 +2251,8 @@ declare class Point {
  * Defines the size of a window or UI element. Contains a 2-element array.
  * Specifies the height and width of an element in pixels. A Dimension object is created when you set an element’s size property. You can set the property using a JavaScript object with named properties {width: wd, height: ht}, or an array with 2 values in the order [wd, ht].
  */
-declare class Dimension {
+
+interface Dimension {
   /**
    * The height in pixels.
    */
@@ -2267,7 +2277,7 @@ declare class Dimension {
  * Defines the boundaries of a window within the screen’s coordinate space, or of a UI element within the container’s coordinate space.
  * A Bounds object is created when you set an element’s bounds property. You can set the property using a JavaScript object with properties named left, top, right, bottom or x, y, width, height, or an array with 4 values in the order [x, y, wd, ht].
  */
-declare class Bounds {
+interface Bounds {
   /**
    * The vertical coordinate, a pixel offset from the origin of the element's coordinate space.
    */
@@ -2506,7 +2516,7 @@ declare class Event {
  * Defines attributes of the ScriptUI environment.
  * Access through the ScriptUI.environment property.
  */
-declare class Environment {
+declare interface Environment {
   /**
    * An object that reports the active state of the keyboard at any time.
    * Provides access to the key state independent of the event-handling framework.
@@ -2518,7 +2528,7 @@ declare class Environment {
  * Provides access to objects used in the ScriptUI event system.
  * Access through the ScriptUI.events property.
  */
-declare class Events {
+declare interface Events {
   /**
    * Creates an instance of the specified Event subclass.
    * The Event returned is a UIEvent,
@@ -2535,7 +2545,7 @@ declare class Events {
  * Access through the ScriptUI.environment.keyboardState property.
  * Query the properties of this object at any time to determine the current key that is down and any modifiers that are pressed.
  */
-declare class KeyboardState {
+declare interface KeyboardState {
   /**
    * True if the Alt or Option key is pressed.
    */
