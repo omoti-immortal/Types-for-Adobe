@@ -1344,6 +1344,8 @@ type _Container = Window | Group | Panel | Tab | TabbedPanel;
      * Normally "item", but an item whose parent is a DropDownList control can have type "separator". A separator item is not mouse-sensitive and is drawn as a horizontal line across the drop-down or pop-up menu.
      */
     readonly type: string
+
+    add(type: "item" | "node", text?: string): ListItem
   }
 
   /**
@@ -1785,7 +1787,7 @@ type _Container = Window | Group | Panel | Tab | TabbedPanel;
      * @param type The type of the child element, the string "item".
      * @param text The localizable text label for the item.
      */
-    add(type: string, text?: string): ListItem
+    add(type: "item" | "node", text?: string): ListItem
 
     /**
      * Retrieves an item object from the list that has a given text label.
