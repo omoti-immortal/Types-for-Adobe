@@ -101,10 +101,20 @@ declare function isXMLName(name: string): boolean
 
 /**
  * Localizes a ZString-encoded string and merges additional arguments into the string.
- * @param what The string to localize. A ZString-encoded string that can contain placeholder for additional arguments in the form %1 to %n.
- * @param arguments Optional argument(s) to be merged into the string. There may be more than one argument.
+ * @param ZString A ZString is an internal Adobe format for localized strings, which you might see in Adobe scripts. It is a string that begins with $$$ and contains a path to the localized string in an installed ZString dictionary.
  */
-declare function localize(what: string, ...arguments: any[]): string
+declare function localize(ZString: string): string
+
+/**
+ * Localizes a ZString-encoded string and merges additional arguments into the string.
+ * @param localization_obj A JavaScript object literal whose property names are locale names, and whose property values are the localized text strings. The locale name is an identifier as specified in the ISO 3166 standard, a set of two-letter language abbreviations, such as "en" for English and "de" for German.
+ * For example:
+ * btnText = { en: "Yes", de: "Ja", fr: "Oui" };
+ * b1 = w.add ("button", undefined, localize (btnText));
+ * The string value of each property can contain variables in the form %1, %2, and so on, corresponding to additional arguments. The variable is replaced with the result of evaluating the corresponding argument in the returned string.
+ * @param args Optional. Additional JavaScript expressions matching variables in the string values supplied in the localization object. The first argument corresponds to the variable %1, the second to %2, and so on.
+ */
+declare function localize(localization_obj: any, ...args: any[]): string
 
 /**
  * Extracts a floating-point number from a string.
