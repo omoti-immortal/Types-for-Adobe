@@ -2562,6 +2562,17 @@ type _Container = Window | Group | Panel | Tab | TabbedPanel;
     readonly shiftKey: boolean
   }
 
+  declare class KeyboardEvent extends UIEvent implements KeyboardState {
+    altKey: boolean;
+    ctrlKey: boolean;
+    metaKey: boolean;
+    shiftKey: boolean;
+    keyIdentifier: string;
+    keyLocation: number;
+    keyName: string;
+    type: string;
+  }
+
   /**
    * Added by types-for-adobe
    */
