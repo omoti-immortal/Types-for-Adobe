@@ -2621,14 +2621,59 @@ interface XML {
 interface XMLList {}
 declare const XMLList: XMLList
 
+declare type _UnitName = "in"
+  | "inch"
+  | "inches"
+  | "ft"
+  | "foot"
+  | "feet"
+  | "yd"
+  | "yard"
+  | "yards"
+  | "mi"
+  | "mile"
+  | "miles"
+  | "mm"
+  | "millimeter"
+  | "millimeters"
+  | "cm"
+  | "centimeter"
+  | "centimeters"
+  | "m"
+  | "meter"
+  | "meters"
+  | "km"
+  | "kilometer"
+  | "kilometers"
+  | "pt"
+  | "point"
+  | "points"
+  | "pc"
+  | "pica"
+  | "picas"
+  | "tpt"
+  | "traditional point"
+  | "traditional points"
+  | "tpc"
+  | "traditional pica"
+  | "traditional picas"
+  | "ci"
+  | "cicero"
+  | "ciceros"
+  | "px"
+  | "pixel"
+  | "pixels"
+  | "%"
+  | "percent";
+
 interface UnitValueConstructor {
   readonly prototype: UnitValue
 
   /**
    * Creates a new UnitValue object.
    */
-  new (value: string | UnitValue): UnitValue
-  (value: string | UnitValue): UnitValue
+  new(value: string | UnitValue): UnitValue
+  new(value: number, unit: _UnitName): UnitValue
 
   /**
    * The base unit for all conversions.
@@ -2661,13 +2706,13 @@ interface UnitValue {
    * Returns this instance as a different unit.
    * @param unitName The unit name.
    */
-  as(unitName: string): UnitValue
+  as(unitName: _UnitName): number
 
   /**
    * Converts this instance to a different unit.
    * @param unitName The unit name.
    */
-  convert(unitName: string): any
+  convert(unitName: _UnitName): boolean
 }
 
 /**
